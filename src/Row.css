@@ -34,3 +34,9 @@
 .row__posterLarge:hover {
   transform: scale(1.09);
 }
+
+@media (max-width: 990px) {
+  .row__title {
+    font-size: 13px;
+  }
+}
