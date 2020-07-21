@@ -30,7 +30,13 @@ function Row({ title, fetchUrl, largeRow }) {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      movieTrailer(movie?.original_title || movie?.title || "")
+      movieTrailer(
+        movie?.original_title ||
+          movie?.title ||
+          movie?.original_name ||
+          movie?.name ||
+          ""
+      )
         .then((url) => {
           // https://www.youtube.com/watch?v=VeEkAdt1GCs
           const urlParams = new URLSearchParams(new URL(url).search);
