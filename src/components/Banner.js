@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axois from "./service/axios";
-import requests from "./service/request";
+import axios from "../service/axios";
+import requests from "../service/request";
 import "./Banner.css";
 
 const baseUrl = "https://image.tmdb.org/t/p/original/";
@@ -10,7 +10,7 @@ function Banner() {
 
   useEffect(() => {
     const fetchMovie = async () => {
-      const response = await axois.get(requests.fetchNetflixOriginals);
+      const response = await axios.get(requests.fetchNetflixOriginals);
       const randomMovie = Math.floor(
         Math.random() * response.data.results.length - 1
       );
